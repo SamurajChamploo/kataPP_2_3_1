@@ -17,7 +17,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // Главная страница со списком всех пользователей
     @GetMapping({"/", "/kataPP_2_3_1_war_exploded/"})
     public String getAllUsers(Model model) {
         List<User> users = userService.getAllUsers();
@@ -26,7 +25,6 @@ public class UserController {
         return "index";
     }
 
-    // Добавление нового пользователя
     @PostMapping({"/add", "/kataPP_2_3_1_war_exploded/add"})
     public String addUser(@RequestParam("firstName") String firstName,
                           @RequestParam("lastName") String lastName,
@@ -38,7 +36,6 @@ public class UserController {
         return "redirect:/kataPP_2_3_1_war_exploded/";
     }
 
-    // Получение формы для редактирования пользователя
     @GetMapping({"/edit", "/kataPP_2_3_1_war_exploded/edit"})
     public String editUserForm(@RequestParam("id") Long id, Model model) {
         User user = userService.getUserById(id);
@@ -48,7 +45,6 @@ public class UserController {
         return "index";
     }
 
-    // Обновление пользователя
     @PostMapping({"/update", "/kataPP_2_3_1_war_exploded/update"})
     public String updateUser(@RequestParam("id") Long id,
                              @RequestParam("firstName") String firstName,
@@ -68,7 +64,6 @@ public class UserController {
         return "redirect:/kataPP_2_3_1_war_exploded/";
     }
 
-    // Удаление пользователя
     @PostMapping({"/delete", "/kataPP_2_3_1_war_exploded/delete"})
     public String deleteUser(@RequestParam("id") Long id) {
         userService.deleteUser(id);
