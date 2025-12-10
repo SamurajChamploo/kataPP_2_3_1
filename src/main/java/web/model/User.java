@@ -26,7 +26,6 @@ public class User {
     @Column(name = "city")
     private String city;
 
-    // Конструкторы
     public User() {}
 
     public User(String firstName, String lastName, String email, Integer age, String city) {
