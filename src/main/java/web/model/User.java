@@ -37,7 +37,6 @@ public class User {
         this.city = city;
     }
 
-    // Геттеры и сеттеры
     public Long getId() {
         return id;
     }
