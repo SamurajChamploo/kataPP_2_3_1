@@ -18,9 +18,4 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected String[] getServletMappings() {
         return new String[] { "/" };
     }
-
-    @Override
-    protected String getServletName() {
-        return "kataPP_2_3_1";
-    }
 }
